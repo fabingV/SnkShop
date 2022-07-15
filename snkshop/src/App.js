@@ -1,11 +1,20 @@
+import Home from "./containers/errors/Home";
+import Error404 from "./containers/errors/Error404";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+
+
+
+
 function App() {
   return (
-    <h1> 
-      <div className="text-green-200">
-        app
-      </div>
+      <Router>
+        <Routes>
+          <Route path="*" element={<Error404/>}/>
+          <Route exact path="/" element={<Home/>}/>
 
-    </h1>
+        </Routes>
+      </Router>
  
   );
 }
